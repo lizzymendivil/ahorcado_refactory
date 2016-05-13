@@ -25,3 +25,14 @@ end
 Then(/^I should see the image "(.*?)"$/) do |image_name|
   last_response.should have_xpath("//img[@src=\"#{image_name}\"]")
 end
+
+# Check the content of a specific table cell
+# To use this, every cell should have a unique ID like XX:YY (1:3)
+Then(/^I should see "(.*?)" at the cell (\d+), (\d+)$/) do |text, x, y|
+
+  cell = "#{x}:#{y}"
+
+  last_response.should have_xpath( "//td[@id=\"#{cell}\"]") do |td|
+    td.should contain( text )
+  end
+end
