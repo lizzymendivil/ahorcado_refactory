@@ -1,0 +1,150 @@
+<!--<% titulo="Juego del Ahorcado"  %>-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Juego del Ahorcado</title>
+		<style>
+			body{
+				background-color: #DDDDDD;
+				font-family: Helvetica;
+				padding: 0;
+				margin: 0;
+			}
+			#caja{
+				background-color: white;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				width: 80%;
+			}
+			.box{
+				display: inline-block;
+				width: 100%;
+			}
+			section, aside, header{
+				border-radius: 5px;
+				box-shadow: 2px 3px 1px gray;
+				background-color: #DDD;
+				padding: 10px;
+				margin: 10px;
+			}
+			header{
+				text-align: center;
+			}
+			.titulo{
+				background-color: #383283;
+				border-radius: 5px;
+				color: white;
+				margin-bottom: 10px;
+				padding: 10px;
+				font-weight: bold;
+			}
+			nav, footer{
+				background-color: #222;
+				box-shadow: 2px 3px 1px gray;
+				border-radius: 5px;
+				margin: 10px;
+				padding-left: 15px;
+			}
+			footer{
+				color: white;
+				text-align: center;
+				padding: 10px;
+			}
+
+			.msg{
+				padding: 10px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				box-shadow: 0px 0px 1px #000;
+				/*display: inline-block;*/
+			}
+
+			#msgPerdiste{
+				padding: 10px;
+				background: #f22d1d;
+				
+				cursor: pointer;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				box-shadow: 0px 0px 1px #000;
+				display: inline-block;
+			}
+
+			#msgGanaste{
+				padding: 10px;
+				background: #08b908;
+				
+				cursor: pointer;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				box-shadow: 0px 0px 1px #000;
+				display: inline-block;
+			}
+
+		</style>
+		
+		<script type="text/javascript">
+			function mostrar(){
+			document.getElementById('oculto').style.display = 'block';}
+			
+			function ocultar(){
+			document.getElementById('ver').style.display = 'none';}
+		</script>
+	</head>
+	<body>
+		<div id="caja">
+			<header>
+				<!--<h1><%= titulo %></h1>-->
+				<h1>Juego del Ahorcado</h1>
+				<h4>by R e f a c t o r y</h4>	
+			</header>
+			<nav>
+			</nav>
+				<div class="box">	
+					<section>
+						<div class="titulo">Adivina la palabra</div>
+						<article>
+							<h1>Tu palabra secreta tiene <%= @cantidad %> caracteres</h1>
+							<form action="/"  method="post">
+								Ingrese una letra:<br>
+								<input type="password" name="letra" size="6"><br><br>
+								<input type="submit" value="adivinar">
+							</form>
+							<div class="msg">El numero de coincidencias es <%= @coincidencias %>.</div>
+							<br><br>
+							<div class="msg">Te quedan <%= @intentos %> vidas.</div>
+							<br><br>
+							<div id="msgGanaste"><%= @mensaje %></div>
+							<br><br>
+							<div id="msgPerdiste"><%= @mensaje %></div>
+							
+							<br><br>
+
+
+							
+							<input type="button" value="Mostrar" onclick="mostrar()">
+							<div id='oculto' style='display:none;'>
+								Contenido a ocultar
+							</div>
+							
+							<input type="button" value="Ocultar" onclick="ocultar()">
+							<div id='ver'>
+								Contenido a mostrar
+							</div>
+						</article>
+					</section>
+				</div>
+				<!--
+				<div>
+					<aside>
+						
+					</aside>
+				</div>			
+			<footer>
+			</footer>-->
+		</div>
+	</body>
+</html>

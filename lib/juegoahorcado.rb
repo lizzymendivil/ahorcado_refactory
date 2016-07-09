@@ -36,7 +36,7 @@ class JuegoAhorcado
 	def buscarletra
 		bolok=true
 		@palabrasecreta.each_char do|l|
-			if l==@letra
+			if l==@letra.upcase
 				@contadorcoincidencias += 1
 				bolok=false
 			end
