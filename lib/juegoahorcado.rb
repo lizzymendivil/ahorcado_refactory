@@ -4,8 +4,12 @@ class JuegoAhorcado
 		@contadorintentos = 6
 		@contadorcoincidencias = 0
 		@letra
+		@pista="Electrodomestico del hogar"
 	end
 	
+	def pista
+		@pista
+	end
 	def palabrasecreta
 		@palabrasecreta
 	end
