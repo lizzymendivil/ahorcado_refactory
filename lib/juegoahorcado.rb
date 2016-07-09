@@ -11,6 +11,9 @@ class JuegoAhorcado
 	def pista
 		@pista
 	end
+	def pista=(new_pista)
+		@pista = new_pista
+	end
 	def juegoterminado
 		if(longitud == @contadorcoincidencias)
 			return 1
@@ -22,6 +25,9 @@ class JuegoAhorcado
 	end
 	def palabrasecreta
 		@palabrasecreta
+	end
+	def palabrasecreta=(new_palabrasecreta)
+		@palabrasecreta = new_palabrasecreta
 	end
 
 	def contadorintentos

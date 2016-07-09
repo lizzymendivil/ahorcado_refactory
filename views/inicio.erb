@@ -90,6 +90,18 @@
 		</script>
 	</head>
 	<body>
-		<h1>Ahorcado</h1>
+<div class="box">	
+	<section>
+		 <h1>Ahorcado</h1>
+		 <form method="POST" action="/jugar">
+  				Palabra Secreta :<br>
+  				<input type="password" name="palabrasecreta" value="<%=@nuevapalabra%>"/><br>
+  				Pista:<br>
+  				<input type="text" name="pista" value="<%=@pista%>"/>
+				<input type="submit" value="jugar"/>
+		 </form> 
+	</section>
+</div>
+		
 	</body>
 </html>
