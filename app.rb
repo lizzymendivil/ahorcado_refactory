@@ -8,7 +8,7 @@ end
 
 get '/' do
     @cantidad = @@juegoahorcado.longitud()
-	erb :test
+	erb :inicio
 end
 
 post '/' do
@@ -26,3 +26,4 @@ post '/' do
 	
 	erb :test
 end
+
