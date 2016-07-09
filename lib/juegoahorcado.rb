@@ -5,10 +5,20 @@ class JuegoAhorcado
 		@contadorcoincidencias = 0
 		@letra
 		@pista="Electrodomestico del hogar"
+		@juegoterminado = 2 #0 = perdio #1 gano #2 continua el juego
 	end
 	
 	def pista
 		@pista
+	end
+	def juegoterminado
+		if(longitud == @contadorcoincidencias)
+			return 1
+		end
+		if(@contadorintentos == 0)
+			return 0
+		end
+		return 2
 	end
 	def palabrasecreta
 		@palabrasecreta
