@@ -14,5 +14,10 @@ Then(/^presiono el boton "(.*?)"$/) do |adivinar|
   click_button(adivinar)
 end
 
+When(/^si la "(.*?)" ingresada corresponde a la "(.*?)"$/) do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
+end
+
+
 
 

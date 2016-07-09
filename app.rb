@@ -12,6 +12,7 @@ get '/' do
 end
 
 post '/' do
+	@juegoterminado = @@juegoahorcado.juegoterminado()
 	@letter = params[:letra] #.upcase
 	@@juegoahorcado.ingresarletra("#{@letter}")  
 
@@ -21,5 +22,7 @@ post '/' do
 	@intentos = @@juegoahorcado.contadorintentos()
 
 	@mensaje = @@juegoahorcado.mensaje()
+
+	
 	erb :test
 end

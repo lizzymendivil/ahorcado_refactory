@@ -87,11 +87,24 @@
 		</style>
 		
 		<script type="text/javascript">
-			function mostrar(){
+			function vermensaje(){
+			var msg = document.getElementById('msgGanaste');
+			var juegoterminado = document.getElementById('juegoterminado');
+			alert(juegoterminado.innerHTML);
+			if (juegoterminado.innerHTML == 1) {
+				document.getElementById('msgGanaste').style.display = 'block';
+			}
+			
+			if (juegoterminado.innerHTML == 0) {
+				document.getElementById('msgPerdiste').style.display = 'block';
+			}
+			}
+
+			/*function mostrar(){
 			document.getElementById('oculto').style.display = 'block';}
 			
 			function ocultar(){
-			document.getElementById('ver').style.display = 'none';}
+			document.getElementById('ver').style.display = 'none';}*/
 		</script>
 	</head>
 	<body>
@@ -110,22 +123,22 @@
 							<h1>Tu palabra secreta tiene <%= @cantidad %> caracteres</h1>
 							<form action="/"  method="post">
 								Ingrese una letra:<br>
-								<input type="password" name="letra" size="6"><br><br>
-								<input type="submit" value="adivinar">
+								<input type="password" name="letra" size="6"><br>
+								<input type="submit" value="adivinar" onclick="vermensaje()">
 							</form>
-							<div class="msg">El numero de coincidencias es <%= @coincidencias %>.</div>
-							<br><br>
-							<div class="msg">Te quedan <%= @intentos %> vidas.</div>
-							<br><br>
-							<div id="msgGanaste"><%= @mensaje %></div>
-							<br><br>
-							<div id="msgPerdiste"><%= @mensaje %></div>
+							<div style='display:none;' class="msg">El numero de coincidencias es <%= @coincidencias %>.</div>
+							<br>
+							<div style='display:none;' class="msg">Te quedan <%= @intentos %> vidas.</div>
+							<br>
 							
-							<br><br>
+							<div id='msgGanaste' style='display:none;'>G a n a s t e !!!</div>
+					
+							<div id="msgPerdiste" style='display:none;'>P e r d i s t e !!!</div>
 
-
+							<div id="juegoterminado" style='display:none;'><%= @juegoterminado %></div>
+			
 							
-							<input type="button" value="Mostrar" onclick="mostrar()">
+							<!--<input type="button" value="Mostrar" onclick="mostrar()">
 							<div id='oculto' style='display:none;'>
 								Contenido a ocultar
 							</div>
@@ -133,7 +146,8 @@
 							<input type="button" value="Ocultar" onclick="ocultar()">
 							<div id='ver'>
 								Contenido a mostrar
-							</div>
+							</div>-->
+
 						</article>
 					</section>
 				</div>
