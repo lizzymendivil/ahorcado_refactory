@@ -1,0 +1,18 @@
+Given(/^estoy en la pagina inicial del juego$/) do
+  visit '/'
+end
+
+Then(/^quiero ver "(.*?)"$/) do |mensaje|
+  last_response.body.should =~ /#{mensaje}/m
+end
+
+When(/^lleno el campo "(.*?)" con el valor "(.*?)"$/) do |campo, valor|
+  fill_in(campo, :with => valor)
+end
+
+Then(/^presiono el boton "(.*?)"$/) do |adivinar|
+  click_button(adivinar)
+end
+
+
+

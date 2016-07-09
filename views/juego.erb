@@ -1,0 +1,13 @@
+<h1>Tu palabra secreta tiene <%= @cantidad %> caracteres</h1>
+
+<label>Ingrese una letra:</label>
+<form method='post' action='/'>
+ 	<input type='text' name='letra' />
+	<input type='submit' value="adivinar" />
+</form>
+
+<label name = "coincidencias">El numero de coincidencias es <%= @coincidencias %>.</label> 
+</br>
+<label name = "intentos">Te quedan <%= @intentos %> vidas.</label> 
+</br>
+<label name = "mensaje"><%= @mensaje %></label> 
