@@ -18,6 +18,8 @@ Feature: Juego
 	When completo la palabra secreta 
 	Then quiero ver el mensaje "G A N A S T E !!!"
 	
-
-
+	
+	Scenario: Pantalla Inicial
+	Given Dado que estoy en la pantalla inicial del juego
+	Then Debo ver la Pista y la palabra Secreta
 

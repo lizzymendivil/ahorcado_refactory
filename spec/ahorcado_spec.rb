@@ -40,4 +40,14 @@ describe JuegoAhorcado do
 		ahorcado = JuegoAhorcado.new()
 		ahorcado.pista.should=="Electrodomestico del hogar"
 	end
+	it "Devolver 1 si el juego termino y adivino la palabra" do
+		ahorcado = JuegoAhorcado.new()
+		ahorcado.ingresarletra("U")
+		ahorcado.ingresarletra("U")
+		ahorcado.ingresarletra("U")
+		ahorcado.ingresarletra("U")
+		ahorcado.ingresarletra("U")
+		ahorcado.ingresarletra("U")
+		ahorcado.juegoterminado.should == 0
+	end
 end
